@@ -1,0 +1,33 @@
+{
+  "canisters": {
+    "ext_token_backend": {
+      "main": "src/ext_token_backend/main.mo",
+      "type": "motoko"
+    },
+    "call_token": {
+      "main": "src/call_token/main.mo",
+      "type": "motoko"
+    },
+    "ext_token_frontend": {
+      "dependencies": [
+        "ext_token_backend",
+        "call_token"
+      ],
+      "frontend": {
+        "entrypoint": "src/ext_token_frontend/src/index.html"
+      },
+      "source": [
+        "src/ext_token_frontend/assets",
+        "dist/ext_token_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}
